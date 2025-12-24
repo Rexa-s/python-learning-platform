@@ -1,14 +1,13 @@
 FROM python:3.11-slim
 
-WORKDIR /app
+# Render uses /opt/render/project/src
+WORKDIR /opt/render/project/src
 
-# Copy requirements
+# Copy and install requirements
 COPY requirements.txt .
-
-# Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy entire project
+# Copy project
 COPY . .
 
 # Expose port
