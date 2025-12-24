@@ -503,3 +503,84 @@ pre[class*="language-"] code {
 .token.operator {
     color: #d4d4d4 !important;
 }
+
+/* ==================== Dark Mode for Lesson Content ====================*/
+body.dark-mode .home-container {
+    background: #2a2a2a;
+}
+
+body.dark-mode .home-header h1 {
+    color: #667eea;
+}
+
+body.dark-mode .home-header p {
+    color: #aaa;
+}
+
+body.dark-mode .progress-card {
+    background: linear-gradient(135deg, #3a3a3a 0%, #2a2a3a 100%);
+    border-left-color: #667eea;
+}
+
+body.dark-mode .progress-card h3 {
+    color: #667eea;
+}
+
+body.dark-mode .lessons-header h2 {
+    color: var(--text-color);
+}
+
+body.dark-mode .lessons-header p {
+    color: #aaa;
+}
+
+body.dark-mode .lesson-header h1 {
+    color: #667eea;
+}
+
+body.dark-mode .lesson-description {
+    color: #aaa;
+}
+
+body.dark-mode .section h2 {
+    color: #667eea;
+    border-bottom-color: #444;
+}
+
+body.dark-mode .section h3 {
+    color: var(--text-color);
+}
+
+body.dark-mode .section p {
+    color: #bbb;
+}
+
+body.dark-mode .example-output {
+    background: #3a3a3a;
+    border-color: #444;
+    color: #d4d4d4;
+}
+
+body.dark-mode .console-output {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    border-color: #3a3a3a;
+}
+
+body.dark-mode .hints details {
+    background: #2a2a2a;
+}
+
+body.dark-mode .hints summary {
+    color: #ff9800;
+}
+
+body.dark-mode .exercise-instructions {
+    background: #2a2a2a;
+    border-left-color: #ff9800;
+}
+
+body.dark-mode .exercise-instructions p,
+body.dark-mode .exercise-instructions li {
+    color: #bbb;
+}

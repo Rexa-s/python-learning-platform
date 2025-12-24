@@ -20,7 +20,7 @@ class CodeExecutor:
     # Forbidden names that can't be used
     FORBIDDEN_NAMES = {
         '__import__', 'eval', 'exec', 'compile',
-        'open', 'file', 'input',
+        'open', 'file',
         '__builtins__', 'globals', 'locals',
         '__code__', '__class__', '__bases__',
         'sys', 'os', '__name__'
@@ -64,12 +64,13 @@ class CodeExecutor:
 
         return True, ""
 
-    def execute(self, code: str) -> Dict[str, Any]:
+    def execute(self, code: str, inputs: list = None) -> Dict[str, Any]:
         """
         Execute Python code safely
 
         Args:
             code: Python code to execute
+            inputs: List of inputs for input() calls
 
         Returns:
             Dictionary with execution results:
@@ -99,10 +100,38 @@ class CodeExecutor:
         error_buffer = io.StringIO()
 
         try:
+            # Create input handler
+            input_queue = list(inputs) if inputs else []
+            input_index = [0]  # Use list to allow modification in nested function
+
+            def custom_input(prompt=''):
+                if prompt:
+                    output_buffer.write(str(prompt))
+
+                if input_index[0] < len(input_queue):
+                    value = input_queue[input_index[0]]
+                    input_index[0] += 1
+                    output_buffer.write(str(value) + '\n')
+                    return str(value)
+                else:
+                    raise EOFError("No more inputs available")
+
             # Create restricted globals
+            safe_builtins = {}
+            for name in self.ALLOWED_BUILTINS:
+                try:
+                    if isinstance(__builtins__, dict):
+                        if name in __builtins__:
+                            safe_builtins[name] = __builtins__[name]
+                    else:
+                        safe_builtins[name] = getattr(__builtins__, name)
+                except:
+                    pass
+
+            safe_builtins['input'] = custom_input
+
             safe_globals = {
-                '__builtins__': {name: __builtins__[name] if isinstance(__builtins__, dict) else getattr(__builtins__, name)
-                                for name in self.ALLOWED_BUILTINS if name in (__builtins__ if isinstance(__builtins__, dict) else dir(__builtins__))},
+                '__builtins__': safe_builtins,
                 '__name__': '__main__',
                 '__doc__': None,
             }
@@ -174,9 +203,11 @@ class CodeExecutor:
         passed = 0
 
         for test in test_cases:
-            # For now, just execute the code once
-            # In a real system, you'd need to handle input() calls
-            exec_result = self.execute(code)
+            # Get inputs for this test case
+            test_inputs = test.get('inputs', [])
+
+            # Execute code with inputs
+            exec_result = self.execute(code, test_inputs)
 
             expected = test.get('expected_output', '')
             actual = exec_result.get('output', '')

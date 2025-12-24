@@ -101,10 +101,10 @@ body {
 }
 
 /* ==================== Typography ====================*/
-h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 10px; }
-h2 { font-size: 2rem; font-weight: 700; margin-bottom: 10px; }
-h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: 10px; }
-h4 { font-size: 1.2rem; font-weight: 600; margin-bottom: 8px; }
+h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 10px; margin-left: 20px; }
+h2 { font-size: 2rem; font-weight: 700; margin-bottom: 10px; margin-left: 20px; }
+h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: 10px; margin-left: 20px; }
+h4 { font-size: 1.2rem; font-weight: 600; margin-bottom: 8px; margin-left: 20px; }
 
 p {
     line-height: 1.6;
@@ -367,16 +367,108 @@ input:focus, textarea:focus, select:focus {
     }
 }
 
-/* ==================== Dark Mode (Future) ====================*/
+/* ==================== Dark Mode Toggle Button ====================*/
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dark-mode-toggle:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+/* ==================== Dark Mode ====================*/
+body.dark-mode {
+    --text-color: #f0f0f0;
+    --bg-color: #1a1a1a;
+    --border-color: #333;
+    --light-color: #2a2a2a;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+}
+
+body.dark-mode .card,
+body.dark-mode .feature-card,
+body.dark-mode .lesson-card,
+body.dark-mode .error-message,
+body.dark-mode .info-message,
+body.dark-mode .success-message,
+body.dark-mode .home-container,
+body.dark-mode .view-lessons,
+body.dark-mode .view-lesson-detail {
+    background: #2a2a2a;
+    color: var(--text-color);
+    border-color: #444;
+}
+
+body.dark-mode code {
+    background: #3a3a3a;
+    color: #e0e0e0;
+}
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+    background: #2a2a2a;
+    color: var(--text-color);
+    border-color: #444;
+}
+
+body.dark-mode .theory-section .content {
+    background: #2a2a2a;
+    border-left-color: #667eea;
+}
+
+body.dark-mode .example {
+    background: #2a2a2a;
+    border-left-color: #4caf50;
+}
+
+body.dark-mode .practice-section {
+    background: #2a2a2a;
+    border-color: #3a3a3a;
+}
+
+body.dark-mode .lesson-toolbar {
+    background: #2a2a2a;
+    border-color: #3a3a3a;
+}
+
+body.dark-mode .test-info {
+    background: #2a2a2a;
+    border-left-color: #667eea;
+}
+
+body.dark-mode details {
+    background: #2a2a2a;
+    border-left-color: #444;
+}
+
+body.dark-mode .dark-mode-toggle {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* System dark mode preference fallback */
 @media (prefers-color-scheme: dark) {
-    :root {
+    body {
         --text-color: #f0f0f0;
         --bg-color: #1a1a1a;
         --border-color: #333;
         --light-color: #2a2a2a;
-    }
-
-    body {
         background: linear-gradient(135deg, #1a1a2e, #16213e);
         color: var(--text-color);
     }

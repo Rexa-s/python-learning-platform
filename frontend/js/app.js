@@ -18,6 +18,9 @@ class LearningApp {
     async init() {
         console.log('Initializing Learning Platform...');
 
+        // Initialize dark mode
+        this.initDarkMode();
+
         // Set up event listeners
         this.setupEventListeners();
 
@@ -38,10 +41,36 @@ class LearningApp {
     }
 
     /**
+     * Initialize dark mode
+     */
+    initDarkMode() {
+        // Check localStorage for saved preference
+        const savedDarkMode = localStorage.getItem('darkMode');
+
+        if (savedDarkMode === 'enabled') {
+            document.body.classList.add('dark-mode');
+        } else if (savedDarkMode === null) {
+            // Check system preference
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
+            }
+        }
+    }
+
+    /**
+     * Toggle dark mode
+     */
+    toggleDarkMode() {
+        const isDarkMode = document.body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+    }
+
+    /**
      * Set up event listeners
      */
     setupEventListeners() {
-        // Navigation
+        // Navigation and actions
         document.addEventListener('click', (e) => {
             if (e.target.matches('[data-action="start-learning"]')) {
                 e.preventDefault();
@@ -68,8 +97,31 @@ class LearningApp {
             } else if (e.target.matches('[data-action="prev-lesson"]')) {
                 e.preventDefault();
                 this.previousLesson();
+            } else if (e.target.matches('[data-action="toggle-dark-mode"]')) {
+                e.preventDefault();
+                this.toggleDarkMode();
+                this.updateDarkModeButton();
             }
         });
+    }
+
+    /**
+     * Update dark mode button icon
+     */
+    updateDarkModeButton() {
+        const btn = document.querySelector('[data-action="toggle-dark-mode"]');
+        if (btn) {
+            const isDark = document.body.classList.contains('dark-mode');
+            btn.innerHTML = isDark ? '☀️' : '🌙';
+        }
+    }
+
+    /**
+     * Get dark mode button HTML
+     */
+    getDarkModeButton() {
+        const isDark = document.body.classList.contains('dark-mode');
+        return `<button class="dark-mode-toggle" data-action="toggle-dark-mode" title="Karanlık mod">${isDark ? '☀️' : '🌙'}</button>`;
     }
 
     /**
@@ -107,6 +159,7 @@ class LearningApp {
         const progress = this.progressTracker.formatProgress();
 
         app.innerHTML = `
+            ${this.getDarkModeButton()}
             <div class="view-home">
                 <div class="home-container">
                     <div class="home-header">
@@ -179,6 +232,7 @@ class LearningApp {
         lessonsHtml += '</div>';
 
         app.innerHTML = `
+            ${this.getDarkModeButton()}
             <div class="view-lessons">
                 <div class="lessons-header">
                     <h2>Tüm Dersler</h2>
@@ -213,6 +267,7 @@ class LearningApp {
             if (!app) return;
 
             app.innerHTML = `
+                ${this.getDarkModeButton()}
                 <div class="view-lesson-detail">
                     <div class="lesson-toolbar">
                         <button class="btn btn-sm" data-action="back-to-lessons">← Geri Dön</button>
