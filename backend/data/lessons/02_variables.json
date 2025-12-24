@@ -1,0 +1,55 @@
+{
+  "id": "02_variables",
+  "title": "Değişkenler ve Veri Tipleri",
+  "order": 2,
+  "description": "Python'da değişkenleri nasıl oluşturacağını ve farklı veri tiplerini öğren",
+  "week": 1,
+  "sections": [
+    {
+      "type": "theory",
+      "title": "Değişkenler Nedir?",
+      "content": "Değişkenler, verileri depolamak için kullandığımız kutulara benzer. Her değişkenin bir **adı** ve bir **değeri** vardır. Python'da değişken oluşturmak çok basittir - sadece bir ad, eşittir işareti ve bir değer yazman yeterli.",
+      "examples": [
+        {
+          "title": "Değişken Oluşturma",
+          "explanation": "Değişken oluşturmanın en basit şekli:",
+          "code": "# Değişken oluştur ve değer ata\nisim = 'Ahmet'\nyaş = 15\nboy = 175.5\n\n# Değişkenleri yazdır\nprint(isim)\nprint(yaş)\nprint(boy)",
+          "output": "Ahmet\n15\n175.5"
+        }
+      ]
+    },
+    {
+      "type": "theory",
+      "title": "Veri Tipleri",
+      "content": "Python'da temel veri tipleri şunlardır:\n\n- **int**: Tam sayılar (5, -10, 0)\n- **float**: Ondalık sayılar (3.14, -2.5)\n- **str**: Metinler ('Merhaba', \"Python\")\n- **bool**: Doğru/Yanlış değerleri (True, False)",
+      "examples": [
+        {
+          "title": "Veri Tiplerini Kullanma",
+          "explanation": "Farklı veri tiplerinin kullanımı:",
+          "code": "# Farklı veri tipleri\ntam_sayi = 42          # int\nondalik = 3.14         # float\nmetin = 'Python'       # str\ndogru_mu = True        # bool\n\n# Veri tipini kontrol et\nprint(type(tam_sayi))\nprint(type(ondalik))\nprint(type(metin))\nprint(type(dogru_mu))",
+          "output": "<class 'int'>\n<class 'float'>\n<class 'str'>\n<class 'bool'>"
+        }
+      ]
+    },
+    {
+      "type": "practice",
+      "title": "Kendi Değişkenlerini Oluştur",
+      "exercise": {
+        "id": "create_variables",
+        "instructions": "Aşağıdaki değişkenleri oluştur ve yazdır:\n1. `ad` adında bir değişken oluştur ve kendi adını string olarak ata\n2. `okulYili` adında bir değişken oluştur ve sınıfını sayı olarak ata (örn: 9)\n3. Her iki değişkeni de `print()` ile ekrana yazdır",
+        "starter_code": "# Ad ve sınıf bilgileri\nad = \nokulyili = \n\nprint(ad)\nprint(okulyili)",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "9"
+          }
+        ],
+        "hints": [
+          "Değişkenlere değer atarken = işareti kullan",
+          "String (metin) değerleri tek veya çift tırnak içine yazmalısın: 'metin' veya \"metin\"",
+          "Sayıları tırnak olmadan yazabilirsin: 9"
+        ]
+      }
+    }
+  ]
+}

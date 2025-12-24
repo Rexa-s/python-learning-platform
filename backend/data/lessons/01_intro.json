@@ -1,0 +1,55 @@
+{
+  "id": "01_intro",
+  "title": "Python'a Giriş",
+  "order": 1,
+  "description": "Python programlama dilini tanı ve ilk programını yaz",
+  "week": 1,
+  "sections": [
+    {
+      "type": "theory",
+      "title": "Python Nedir?",
+      "content": "Python, 1989 yılında Guido van Rossum tarafından tasarlanan, okunması ve öğrenilmesi kolay olan bir programlama dilidir. Python, başlangıç seviyesindeki programcılardan profesyonel geliştiricilere kadar geniş bir kullanıcı tabanına sahiptir.",
+      "examples": [
+        {
+          "title": "Python'un Basitliği",
+          "explanation": "Python'un syntax'ı (yapısı) İngilizceye çok benzer, bu da öğrenmeyi kolaylaştırır.",
+          "code": "# Bu bir yorum satırıdır\nprint('Merhaba, Python!')",
+          "output": "Merhaba, Python!"
+        }
+      ]
+    },
+    {
+      "type": "theory",
+      "title": "Python Kurulumu ve Ortam",
+      "content": "Python'u bilgisayarına kurmak çok basittir. **python.org** sitesinden en son sürümünü indirebilirsin. Bu platformda ise zaten Python yüklü olduğundan direkt kod yazabilirsin!",
+      "examples": [
+        {
+          "title": "Python Versiyonu Kontrol Etme",
+          "explanation": "Python'un hangi versiyonunun yüklü olduğunu kontrol etmek için:",
+          "code": "import sys\nprint(sys.version)",
+          "output": "3.x.x ... (Python sürümü)"
+        }
+      ]
+    },
+    {
+      "type": "practice",
+      "title": "İlk Programını Yaz",
+      "exercise": {
+        "id": "first_program",
+        "instructions": "Aşağıdaki kod editöründe **print()** fonksiyonunu kullanarak ekrana 'Merhaba Dünya!' yazdır. Sonra **Kodu Çalıştır** butonuna tıkla.\n\n**İpucu**: `print()` fonksiyonunun içine tırnak işaretleriyle metni yazmalısın.",
+        "starter_code": "# Ekrana bir şey yazdırmak için print() kullan\nprint()",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "Merhaba Dünya!"
+          }
+        ],
+        "hints": [
+          "print() fonksiyonunun parantezleri arasına yazmanız gereken metni koy",
+          "Metin tırnak işaretleri içine yazılmalı: 'metin' veya \"metin\"",
+          "Tam olarak 'Merhaba Dünya!' yazmalısın"
+        ]
+      }
+    }
+  ]
+}

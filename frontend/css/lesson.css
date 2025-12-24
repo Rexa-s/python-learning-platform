@@ -1,0 +1,505 @@
+/**
+ * Lesson View Styles
+ */
+
+.view-home,
+.view-lessons,
+.view-lesson-detail {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ==================== Home View ====================*/
+.home-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    padding: 50px 40px;
+    text-align: center;
+}
+
+.home-header h1 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.home-header p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.progress-section {
+    margin: 40px 0;
+}
+
+.progress-card {
+    background: linear-gradient(135deg, #f5f7fa 0%, #f0f4ff 100%);
+    border-radius: 12px;
+    padding: 30px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.progress-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* ==================== Lessons List View ====================*/
+.view-lessons {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    min-height: 600px;
+}
+
+.lessons-header {
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--light-color);
+    padding-bottom: 20px;
+}
+
+.lessons-header h2 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.lessons-header p {
+    color: #666;
+    margin: 0;
+}
+
+/* ==================== Lesson Detail View ====================*/
+.view-lesson-detail {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.lesson-toolbar {
+    background: #f9f9f9;
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px;
+}
+
+.lesson-content {
+    padding: 40px;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+/* ==================== Lesson Content ====================*/
+.lesson-header {
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--light-color);
+    padding-bottom: 20px;
+}
+
+.lesson-header h1 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.lesson-description {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* ==================== Sections ====================*/
+.section {
+    margin-bottom: 40px;
+}
+
+.section h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--light-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.section h3 {
+    color: var(--text-color);
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.section p {
+    line-height: 1.8;
+    color: #555;
+}
+
+.section strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.section em {
+    color: #666;
+    font-style: italic;
+}
+
+/* ==================== Theory Section ====================*/
+.theory-section .content {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.theory-section code {
+    background: #fff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: #d63384;
+}
+
+/* ==================== Examples ====================*/
+.examples {
+    margin-top: 30px;
+}
+
+.example {
+    background: #f5f7fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--success-color);
+}
+
+.example h4 {
+    color: var(--success-color);
+    margin-bottom: 15px;
+}
+
+.example-content p {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.example-content pre {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 10px 0;
+}
+
+.example-content code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+}
+
+.example-output {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px;
+    margin-top: 10px;
+    font-family: 'Courier New', monospace;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* ==================== Practice Section ====================*/
+.practice-section {
+    background: #fffbf0;
+    border: 1px solid #ffe5b4;
+    border-radius: 8px;
+    padding: 30px;
+    border-left: 4px solid var(--warning-color);
+}
+
+.practice-section h2 {
+    color: var(--warning-color);
+    border-color: var(--warning-color);
+}
+
+.exercise {
+    margin-top: 20px;
+}
+
+.exercise-instructions {
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    border-left: 3px solid var(--warning-color);
+}
+
+.exercise-instructions p,
+.exercise-instructions li {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.starter-code {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 15px;
+    border-radius: 6px;
+    margin: 20px 0;
+    overflow-x: auto;
+}
+
+.starter-code h4 {
+    color: #d4d4d4;
+    margin-bottom: 10px;
+}
+
+.starter-code pre {
+    margin: 0;
+    background: transparent;
+}
+
+.starter-code code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+}
+
+/* ==================== Hints ====================*/
+.hints {
+    background: white;
+    border-radius: 6px;
+    margin: 20px 0;
+}
+
+.hints details {
+    cursor: pointer;
+    padding: 15px;
+    user-select: none;
+}
+
+.hints summary {
+    color: var(--warning-color);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.hints summary:hover {
+    color: #ff8000;
+}
+
+.hints ul {
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+.hints li {
+    color: #555;
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* ==================== Editor Container ====================*/
+.editor-container {
+    background: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 20px 0;
+    border: 1px solid #3a3a3a;
+}
+
+.code-editor {
+    height: 400px;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    background: #1e1e1e;
+    color: #d4d4d4;
+}
+
+.code-editor .CodeMirror {
+    height: 100%;
+    background: #1e1e1e;
+    color: #d4d4d4;
+    font-family: 'Courier New', monospace;
+}
+
+.code-editor .CodeMirror-gutters {
+    background: #252526;
+    border-right: 1px solid #3a3a3a;
+}
+
+.code-editor .CodeMirror-linenumber {
+    color: #858585;
+}
+
+.code-editor .CodeMirror-cursor {
+    border-left-color: #d4d4d4;
+}
+
+/* ==================== Console Output ====================*/
+.console-output {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-height: 250px;
+    overflow-y: auto;
+    border: 1px solid #3a3a3a;
+    margin: 20px 0;
+}
+
+.console-success {
+    border-left: 4px solid var(--success-color);
+}
+
+.console-error {
+    border-left: 4px solid var(--error-color);
+    color: #f48771;
+}
+
+.console-warning {
+    border-left: 4px solid var(--warning-color);
+    color: #f4d03f;
+}
+
+.console-info {
+    border-left: 4px solid var(--primary-color);
+}
+
+/* ==================== Editor Actions ====================*/
+.editor-actions {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.editor-actions .btn {
+    flex: 1;
+    min-width: 150px;
+}
+
+/* ==================== Test Info ====================*/
+.test-info {
+    background: #e3f2fd;
+    border-radius: 8px;
+    padding: 20px;
+    border-left: 4px solid var(--primary-color);
+    margin-top: 20px;
+}
+
+.test-info h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.test-info p {
+    color: #555;
+    margin: 0;
+}
+
+/* ==================== Details/Summary ====================*/
+details {
+    background: #f9f9f9;
+    border-radius: 6px;
+    padding: 15px;
+    border-left: 3px solid #ccc;
+    margin: 15px 0;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--primary-color);
+    user-select: none;
+}
+
+summary:hover {
+    opacity: 0.8;
+}
+
+details[open] summary {
+    margin-bottom: 15px;
+}
+
+/* ==================== Responsive ====================*/
+@media (max-width: 768px) {
+    .home-container {
+        padding: 30px 20px;
+    }
+
+    .lesson-content {
+        padding: 20px;
+    }
+
+    .editor-actions {
+        flex-direction: column;
+    }
+
+    .editor-actions .btn {
+        width: 100%;
+    }
+
+    .code-editor {
+        height: 300px;
+    }
+
+    .lesson-nav {
+        flex-direction: column;
+    }
+
+    .practice-section {
+        padding: 20px;
+    }
+
+    .example {
+        padding: 15px;
+    }
+}
+
+/* ==================== Syntax Highlighting (Prism) ====================*/
+pre[class*="language-"] {
+    background: #1e1e1e !important;
+    color: #d4d4d4 !important;
+    padding: 15px !important;
+    border-radius: 6px !important;
+    overflow-x: auto !important;
+    margin: 15px 0 !important;
+}
+
+pre[class*="language-"] code {
+    background: transparent !important;
+    color: inherit !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+}
+
+.token.keyword {
+    color: #569cd6 !important;
+}
+
+.token.string {
+    color: #ce9178 !important;
+}
+
+.token.number {
+    color: #b5cea8 !important;
+}
+
+.token.comment {
+    color: #6a9955 !important;
+}
+
+.token.function {
+    color: #dcdcaa !important;
+}
+
+.token.punctuation {
+    color: #d4d4d4 !important;
+}
+
+.token.operator {
+    color: #d4d4d4 !important;
+}

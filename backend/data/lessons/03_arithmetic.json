@@ -1,0 +1,55 @@
+{
+  "id": "03_arithmetic",
+  "title": "Aritmetik İşlemler",
+  "order": 3,
+  "description": "Python'da matematiksel işlemleri nasıl yapacağını öğren",
+  "week": 1,
+  "sections": [
+    {
+      "type": "theory",
+      "title": "Temel Operatörler",
+      "content": "Python, matematikte kullandığımız temel işlemleri destekler:\n\n- **+** : Toplama\n- **-** : Çıkarma\n- *** : Çarpma\n- **/** : Bölme (sonuç float olur)\n- **//** : Tam bölme (sonuç int olur)\n- **%** : Kalan bulma (modulo)\n- **\\*\\*** : Üs alma (kuvvet)",
+      "examples": [
+        {
+          "title": "Temel Aritmetik İşlemler",
+          "explanation": "Matematik işlemleri yapmanın basit örnekleri:",
+          "code": "# Toplama\nsonuc1 = 10 + 5\nprint(f'10 + 5 = {sonuc1}')\n\n# Çarpma\nsonuc2 = 3 * 4\nprint(f'3 * 4 = {sonuc2}')\n\n# Bölme\nsonuc3 = 20 / 4\nprint(f'20 / 4 = {sonuc3}')\n\n# Kalan\nsonuc4 = 17 % 5\nprint(f'17 % 5 = {sonuc4}')",
+          "output": "10 + 5 = 15\n3 * 4 = 12\n20 / 4 = 5.0\n17 % 5 = 2"
+        }
+      ]
+    },
+    {
+      "type": "theory",
+      "title": "İşlem Sırası",
+      "content": "Python, matematikteki işlem sırasını takip eder (PEMDAS/BODMAS):\n\n1. Parantez: ()\n2. Üs: **\n3. Çarpma/Bölme: *, /, //, %\n4. Toplama/Çıkarma: +, -",
+      "examples": [
+        {
+          "title": "İşlem Sırası Örneği",
+          "explanation": "Aynı seviyedeki işlemler soldan sağa yapılır:",
+          "code": "# İşlem sırası\nsonuc1 = 2 + 3 * 4\nprint(f'2 + 3 * 4 = {sonuc1}')  # 3*4 önce yapılır\n\nsonuc2 = (2 + 3) * 4\nprint(f'(2 + 3) * 4 = {sonuc2}')  # Parantez önce yapılır\n\nsonuc3 = 10 / 2 * 5\nprint(f'10 / 2 * 5 = {sonuc3}')  # Soldan sağa",
+          "output": "2 + 3 * 4 = 14\n(2 + 3) * 4 = 20\n10 / 2 * 5 = 25.0"
+        }
+      ]
+    },
+    {
+      "type": "practice",
+      "title": "Hesapla ve Yazdır",
+      "exercise": {
+        "id": "arithmetic_calc",
+        "instructions": "Aşağıdaki matematiksel işlemleri yap ve sonuçlarını yazdır:\n1. 25 + 15 topla\n2. Sonucu 2'ye böl\n3. Bölme sonucunu yazdır\n\n**Örnek İşlem**: (25 + 15) / 2 = 20",
+        "starter_code": "# Aşağıdaki işlemleri tamamla\nsonuc = (25 + 15) / 2\nprint(sonuc)",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "20"
+          }
+        ],
+        "hints": [
+          "Parantezleri kullanarak işlem sırasını belirle",
+          "Bölme işlemi (/) kullan",
+          "print() ile sonucu yazdır"
+        ]
+      }
+    }
+  ]
+}

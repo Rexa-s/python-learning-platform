@@ -1,0 +1,330 @@
+/**
+ * Code Editor Styles (CodeMirror)
+ */
+
+/* ==================== CodeMirror Base ====================*/
+.CodeMirror {
+    font-family: 'Courier New', Courier, monospace !important;
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    background: #1e1e1e !important;
+    color: #d4d4d4 !important;
+    border: 1px solid #3a3a3a !important;
+    border-radius: 6px !important;
+}
+
+.CodeMirror-sizer {
+    background: #1e1e1e !important;
+}
+
+.CodeMirror-gutters {
+    background: #252526 !important;
+    border-right: 1px solid #3a3a3a !important;
+    padding-right: 10px !important;
+}
+
+.CodeMirror-linenumber {
+    color: #858585 !important;
+    padding: 0 8px !important;
+    text-align: right !important;
+}
+
+.CodeMirror-linenumber-fallback {
+    color: #858585 !important;
+}
+
+/* ==================== Cursor ====================*/
+.CodeMirror-cursor {
+    border-left: 1px solid #d4d4d4 !important;
+    border-right: none !important;
+}
+
+.CodeMirror-cursor-secondary {
+    border-left: 1px solid #7d7d7d !important;
+}
+
+/* ==================== Selection ====================*/
+.CodeMirror-selected {
+    background: #264f78 !important;
+}
+
+.CodeMirror-line::selection,
+.CodeMirror-line > span::selection,
+.CodeMirror-line > span > span::selection {
+    background: #264f78 !important;
+}
+
+.CodeMirror-line::-moz-selection,
+.CodeMirror-line > span::-moz-selection,
+.CodeMirror-line > span > span::-moz-selection {
+    background: #264f78 !important;
+}
+
+/* ==================== Syntax Highlighting (Python) ====================*/
+.cm-atom {
+    color: #ce9178 !important;
+}
+
+.cm-attribute {
+    color: #d4d4d4 !important;
+}
+
+.cm-builtin {
+    color: #4ec9b0 !important;
+}
+
+.cm-bracket {
+    color: #ffd700 !important;
+}
+
+.cm-comment {
+    color: #6a9955 !important;
+    font-style: italic !important;
+}
+
+.cm-def {
+    color: #dcdcaa !important;
+}
+
+.cm-error {
+    background: #f48771 !important;
+    color: #ffffff !important;
+}
+
+.cm-header {
+    color: #ce9178 !important;
+}
+
+.cm-hr {
+    color: #6a9955 !important;
+}
+
+.cm-indent-guide {
+    color: #404040 !important;
+}
+
+.cm-keyword {
+    color: #569cd6 !important;
+    font-weight: bold !important;
+}
+
+.cm-link {
+    color: #6a9955 !important;
+}
+
+.cm-meta {
+    color: #9cdcfe !important;
+}
+
+.cm-number {
+    color: #b5cea8 !important;
+}
+
+.cm-operator {
+    color: #d4d4d4 !important;
+}
+
+.cm-property {
+    color: #9cdcfe !important;
+}
+
+.cm-qualifier {
+    color: #ce9178 !important;
+}
+
+.cm-quote {
+    color: #6a9955 !important;
+}
+
+.cm-string {
+    color: #ce9178 !important;
+}
+
+.cm-string-2 {
+    color: #ce9178 !important;
+}
+
+.cm-tag {
+    color: #569cd6 !important;
+}
+
+.cm-variable {
+    color: #9cdcfe !important;
+}
+
+.cm-variable-2 {
+    color: #4ec9b0 !important;
+}
+
+.cm-variable-3 {
+    color: #4fc1ff !important;
+}
+
+.cm-type {
+    color: #4ec9b0 !important;
+}
+
+/* ==================== Line Highlighting ====================*/
+.CodeMirror-activeline-background {
+    background: #2a2a2a !important;
+}
+
+.CodeMirror-matchingbracket {
+    background: #404040 !important;
+    outline: 1px solid #6a9955 !important;
+}
+
+.CodeMirror-nonmatchingbracket {
+    background: #f48771 !important;
+    color: #ffffff !important;
+}
+
+/* ==================== Search & Replace ====================*/
+.CodeMirror-search-match {
+    background: #6a9955 !important;
+    color: #ffffff !important;
+}
+
+.CodeMirror-search-match-selected {
+    background: #f48771 !important;
+    color: #ffffff !important;
+}
+
+/* ==================== Scrollbar ====================*/
+.CodeMirror-scrollbar-filler,
+.CodeMirror-gutter-filler {
+    background: #1e1e1e !important;
+}
+
+.CodeMirror-scrollbar {
+    z-index: 8;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-left: 1px solid #3a3a3a !important;
+}
+
+.CodeMirror-vscrollbar {
+    right: 0;
+    top: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.CodeMirror-hscrollbar {
+    bottom: 0;
+    left: 0;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.CodeMirror-vscrollbar::before,
+.CodeMirror-vscrollbar::after,
+.CodeMirror-hscrollbar::before,
+.CodeMirror-hscrollbar::after {
+    background: #404040 !important;
+}
+
+/* ==================== UI Elements ====================*/
+.CodeMirror-measuring {
+    background: transparent !important;
+}
+
+/* ==================== Fullscreen ====================*/
+.CodeMirror-fullscreen {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    height: auto !important;
+    z-index: 9999 !important;
+}
+
+.CodeMirror-fullscreen-backdrop {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    z-index: 9998 !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* ==================== Line Wrapping ====================*/
+.CodeMirror-wrap pre {
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+    white-space: pre-wrap !important;
+    white-space: -moz-pre-wrap !important;
+    white-space: -webkit-pre-wrap !important;
+    white-space: -o-pre-wrap !important;
+}
+
+/* ==================== Responsive ====================*/
+@media (max-width: 768px) {
+    .CodeMirror {
+        font-size: 0.9rem !important;
+    }
+
+    .CodeMirror-linenumber {
+        padding: 0 4px !important;
+    }
+}
+
+/* ==================== Hints/Autocomplete ====================*/
+.CodeMirror-hints {
+    background: #252526 !important;
+    color: #d4d4d4 !important;
+    border: 1px solid #3a3a3a !important;
+    border-radius: 4px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+    z-index: 10 !important;
+    max-height: 200px !important;
+    overflow-y: auto !important;
+}
+
+.CodeMirror-hint {
+    padding: 8px 12px !important;
+    cursor: pointer !important;
+    border-left: 2px solid transparent !important;
+}
+
+.CodeMirror-hint-active {
+    background: #264f78 !important;
+    color: #ffffff !important;
+    border-left-color: #569cd6 !important;
+}
+
+/* ==================== Linting ====================*/
+.CodeMirror-lint-marker {
+    width: 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.CodeMirror-lint-mark-error {
+    background: transparent !important;
+    color: #f48771 !important;
+    font-weight: bold !important;
+}
+
+.CodeMirror-lint-message {
+    color: #d4d4d4 !important;
+    background: #252526 !important;
+    padding: 8px 12px !important;
+    border-radius: 4px !important;
+    border-left: 3px solid #f48771 !important;
+}
+
+.CodeMirror-lint-message-error {
+    border-left-color: #f48771 !important;
+}
+
+.CodeMirror-lint-message-warning {
+    border-left-color: #f4d03f !important;
+}
+
+.CodeMirror-lint-message-info {
+    border-left-color: #569cd6 !important;
+}
