@@ -120,76 +120,87 @@ class Database:
 
     def mark_lesson_complete(self, lesson_id):
         """Mark a lesson as completed"""
-        conn = sqlite3.connect(self.db_path)
-        cursor = conn.cursor()
+        try:
+            conn = sqlite3.connect(self.db_path)
+            cursor = conn.cursor()
 
-        cursor.execute('''
-            INSERT OR REPLACE INTO user_progress (lesson_id, completed, completed_at)
-            VALUES (?, TRUE, ?)
-        ''', (lesson_id, datetime.now().isoformat()))
+            cursor.execute('''
+                INSERT OR REPLACE INTO user_progress (lesson_id, completed, completed_at)
+                VALUES (?, TRUE, ?)
+            ''', (lesson_id, datetime.now().isoformat()))
 
-        conn.commit()
-        conn.close()
+            conn.commit()
+            conn.close()
+        except Exception as e:
+            print(f"Error marking lesson complete: {e}")
 
     def mark_exercise_complete(self, lesson_id, exercise_id):
         """Mark an exercise as completed"""
-        conn = sqlite3.connect(self.db_path)
-        cursor = conn.cursor()
+        try:
+            conn = sqlite3.connect(self.db_path)
+            cursor = conn.cursor()
 
-        cursor.execute('''
-            INSERT OR REPLACE INTO user_progress (lesson_id, exercise_id, test_passed, completed_at)
-            VALUES (?, ?, TRUE, ?)
-        ''', (lesson_id, exercise_id, datetime.now().isoformat()))
+            cursor.execute('''
+                INSERT OR REPLACE INTO user_progress (lesson_id, exercise_id, test_passed, completed_at)
+                VALUES (?, ?, TRUE, ?)
+            ''', (lesson_id, exercise_id, datetime.now().isoformat()))
 
-        conn.commit()
-        conn.close()
+            conn.commit()
+            conn.close()
+        except Exception as e:
+            print(f"Error marking exercise complete: {e}")
 
     def save_code_submission(self, lesson_id, exercise_id, code, output, success):
         """Save code submission for an exercise"""
-        conn = sqlite3.connect(self.db_path)
-        cursor = conn.cursor()
+        try:
+            conn = sqlite3.connect(self.db_path)
+            cursor = conn.cursor()
 
-        cursor.execute('''
-            INSERT INTO code_submissions (lesson_id, exercise_id, code, output, success)
-            VALUES (?, ?, ?, ?, ?)
-        ''', (lesson_id, exercise_id, code, output, success))
+            cursor.execute('''
+                INSERT INTO code_submissions (lesson_id, exercise_id, code, output, success)
+                VALUES (?, ?, ?, ?, ?)
+            ''', (lesson_id, exercise_id, code, output, success))
 
-        conn.commit()
-        conn.close()
+            conn.commit()
+            conn.close()
+        except Exception as e:
+            print(f"Error saving code submission: {e}")
 
     def get_progress(self):
         """Get overall user progress"""
         lessons = self.get_all_lessons()
         total = len(lessons)
+        completed = 0
+        current_lesson_id = lessons[0]['id'] if lessons else None
 
-        conn = sqlite3.connect(self.db_path)
-        cursor = conn.cursor()
+        try:
+            conn = sqlite3.connect(self.db_path)
+            cursor = conn.cursor()
 
-        # Completed lessons
-        cursor.execute('SELECT COUNT(DISTINCT lesson_id) FROM user_progress WHERE completed = TRUE')
-        completed = cursor.fetchone()[0]
+            # Completed lessons
+            cursor.execute('SELECT COUNT(DISTINCT lesson_id) FROM user_progress WHERE completed = TRUE')
+            result = cursor.fetchone()
+            if result:
+                completed = result[0]
 
-        # Current lesson (next incomplete)
-        cursor.execute('''
-            SELECT lesson_id FROM user_progress WHERE completed = TRUE ORDER BY completed_at DESC LIMIT 1
-        ''')
-        current_result = cursor.fetchone()
-        current_lesson_id = None
-        if current_result:
-            # Get next lesson
-            current_id = current_result[0]
-            for lesson in lessons:
-                if lesson['id'] == current_id:
-                    idx = lessons.index(lesson)
-                    if idx + 1 < len(lessons):
-                        current_lesson_id = lessons[idx + 1]['id']
-                    break
-        else:
-            # No lessons completed, start with first
-            if lessons:
-                current_lesson_id = lessons[0]['id']
+            # Current lesson (next incomplete)
+            cursor.execute('''
+                SELECT lesson_id FROM user_progress WHERE completed = TRUE ORDER BY completed_at DESC LIMIT 1
+            ''')
+            current_result = cursor.fetchone()
+            if current_result:
+                # Get next lesson
+                current_id = current_result[0]
+                for lesson in lessons:
+                    if lesson['id'] == current_id:
+                        idx = lessons.index(lesson)
+                        if idx + 1 < len(lessons):
+                            current_lesson_id = lessons[idx + 1]['id']
+                        break
 
-        conn.close()
+            conn.close()
+        except Exception as e:
+            print(f"Error getting progress: {e}")
 
         return {
             'total': total,
@@ -200,17 +211,25 @@ class Database:
 
     def get_lesson_progress(self, lesson_id):
         """Get progress for a specific lesson"""
-        conn = sqlite3.connect(self.db_path)
-        cursor = conn.cursor()
+        passed_exercises = 0
 
-        cursor.execute('''
-            SELECT COUNT(*) FROM user_progress
-            WHERE lesson_id = ? AND test_passed = TRUE
-        ''', (lesson_id,))
+        try:
+            conn = sqlite3.connect(self.db_path)
+            cursor = conn.cursor()
 
-        passed_exercises = cursor.fetchone()[0]
+            cursor.execute('''
+                SELECT COUNT(*) FROM user_progress
+                WHERE lesson_id = ? AND test_passed = TRUE
+            ''', (lesson_id,))
 
-        conn.close()
+            result = cursor.fetchone()
+            if result:
+                passed_exercises = result[0]
+
+            conn.close()
+        except Exception as e:
+            # If column doesn't exist or other error, return 0
+            passed_exercises = 0
 
         return {
             'lesson_id': lesson_id,
