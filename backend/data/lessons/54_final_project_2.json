@@ -1,0 +1,40 @@
+{
+  "id": "54_final_project_2",
+  "title": "Final Projesi - Hava Durumu",
+  "order": 54,
+  "week": 16,
+  "description": "Hava durumu uygulaması",
+  "sections": [
+    {
+      "type": "theory",
+      "title": "Final Projesi - Hava Durumu",
+      "content": "Hava durumu uygulaması",
+      "examples": [
+        {
+          "title": "Örnek",
+          "explanation": "Bu konuyu daha sonra öğreneceksiniz",
+          "code": "# Örnek kod\npass",
+          "output": "Başarılı"
+        }
+      ]
+    },
+    {
+      "type": "practice",
+      "title": "Final Projesi - Hava Durumu Egzersizi",
+      "exercise": {
+        "id": "54_final_project_2_ex",
+        "instructions": "hava durumu uygulaması egzersizi",
+        "starter_code": "print('Egzersiz yapıyorum')",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "Egzersiz"
+          }
+        ],
+        "hints": [
+          "Öğrendikleri uygula"
+        ]
+      }
+    }
+  ]
+}

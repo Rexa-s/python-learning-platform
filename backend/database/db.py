@@ -4,9 +4,21 @@ import sqlite3
 from datetime import datetime
 
 class Database:
-    def __init__(self, db_path='backend/database/learning.db'):
+    def __init__(self, db_path=None):
+        # Get the directory of the current file and work from there
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        parent_dir = os.path.dirname(current_dir)  # backend directory
+
+        if db_path is None:
+            db_path = os.path.join(parent_dir, 'database', 'learning.db')
+
         self.db_path = db_path
-        self.lessons_dir = 'backend/data/lessons'
+        self.lessons_dir = os.path.join(parent_dir, 'data', 'lessons')
+
+        # Ensure directories exist
+        os.makedirs(os.path.dirname(self.db_path), exist_ok=True)
+        os.makedirs(self.lessons_dir, exist_ok=True)
+
         self.init_database()
         self.load_lessons_from_files()
 

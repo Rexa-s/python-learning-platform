@@ -1,0 +1,40 @@
+{
+  "id": "44_turtle_events",
+  "title": "Turtle Olayları",
+  "order": 44,
+  "week": 13,
+  "description": "Fare ve klavye olayları",
+  "sections": [
+    {
+      "type": "theory",
+      "title": "Turtle Olayları",
+      "content": "Fare ve klavye olayları",
+      "examples": [
+        {
+          "title": "Örnek",
+          "explanation": "Bu konuyu daha sonra öğreneceksiniz",
+          "code": "# Örnek kod\npass",
+          "output": "Başarılı"
+        }
+      ]
+    },
+    {
+      "type": "practice",
+      "title": "Turtle Olayları Egzersizi",
+      "exercise": {
+        "id": "44_turtle_events_ex",
+        "instructions": "fare ve klavye olayları egzersizi",
+        "starter_code": "print('Egzersiz yapıyorum')",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "Egzersiz"
+          }
+        ],
+        "hints": [
+          "Öğrendikleri uygula"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "id": "23_string_methods",
+  "title": "String Metodları",
+  "order": 23,
+  "week": 7,
+  "description": "String ile işlem yapmayı öğren",
+  "sections": [
+    {
+      "type": "theory",
+      "title": "String Metodları",
+      "content": "Stringler üzerinde işlem yapmak için metodlar kullanırız:\n- **upper()**: Büyük harfe çevir\n- **lower()**: Küçük harfe çevir\n- **capitalize()**: İlk harfi büyüt\n- **replace()**: Değiştir",
+      "examples": [
+        {
+          "title": "String Metodları",
+          "explanation": "String işlemleri:",
+          "code": "metin = 'merhaba'\nprint(metin.upper())\nprint(metin.capitalize())\nprint(metin.replace('a', 'o'))",
+          "output": "MERHABA\nMerhaba\nmerhobο"
+        }
+      ]
+    },
+    {
+      "type": "practice",
+      "title": "String Metodu Egzersizi",
+      "exercise": {
+        "id": "string_methods",
+        "instructions": "Bir string'i büyük harfe çevir ve yazdır",
+        "starter_code": "metin = 'python programlama'\nprint(metin.upper())",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "PYTHON PROGRAMLAMA"
+          }
+        ],
+        "hints": [
+          "upper() metodunu kullan"
+        ]
+      }
+    },
+    {
+      "type": "practice",
+      "title": "23 String Methods Egzersizi",
+      "exercise": {
+        "id": "23_string_methods_practice",
+        "instructions": "string ile işlem yapmayı öğren pratiği yapın",
+        "starter_code": "print('Egzersiz alanı')",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "Egzersiz"
+          }
+        ],
+        "hints": [
+          "Adımları takip et",
+          "Konsolu kontrol et"
+        ]
+      }
+    }
+  ]
+}

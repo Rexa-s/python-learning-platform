@@ -1,0 +1,60 @@
+{
+  "id": "18_functions_intro",
+  "title": "Fonksiyonlara Giriş",
+  "order": 18,
+  "week": 6,
+  "description": "Kendi fonksiyonlarını yazacağını öğren",
+  "sections": [
+    {
+      "type": "theory",
+      "title": "def ile Fonksiyon Tanımlama",
+      "content": "**def** ile yeniden kullanılabilir kod blokları oluşturabilirsin.",
+      "examples": [
+        {
+          "title": "Fonksiyon Tanımlama",
+          "explanation": "Selamlama fonksiyonu:",
+          "code": "def selam():\n    print('Merhaba Dünya!')\n\nselam()\nselam()",
+          "output": "Merhaba Dünya!\nMerhaba Dünya!"
+        }
+      ]
+    },
+    {
+      "type": "practice",
+      "title": "Fonksiyon Egzersizi",
+      "exercise": {
+        "id": "func_intro",
+        "instructions": "Bir selamla() fonksiyonu yaz ve iki kez çağır",
+        "starter_code": "def selamla():\n    print('Selam!')\n\nselamla()\nselamla()",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "Selam!"
+          }
+        ],
+        "hints": [
+          "def ile fonksiyon tanımla",
+          "Parantez ile çağır"
+        ]
+      }
+    },
+    {
+      "type": "practice",
+      "title": "18 Functions Intro Egzersizi",
+      "exercise": {
+        "id": "18_functions_intro_practice",
+        "instructions": "kendi fonksiyonlarını yazacağını öğren pratiği yapın",
+        "starter_code": "print('Egzersiz alanı')",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "Egzersiz"
+          }
+        ],
+        "hints": [
+          "Adımları takip et",
+          "Konsolu kontrol et"
+        ]
+      }
+    }
+  ]
+}

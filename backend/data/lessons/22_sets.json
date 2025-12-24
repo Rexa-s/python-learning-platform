@@ -1,0 +1,60 @@
+{
+  "id": "22_sets",
+  "title": "Kümeler (Sets)",
+  "order": 22,
+  "week": 6,
+  "description": "Tekrarsız değer koleksiyonları öğren",
+  "sections": [
+    {
+      "type": "theory",
+      "title": "Set Nedir?",
+      "content": "**Set**, benzersiz (tekrarsız) değerleri saklar. Küme parantezi {} ile oluşturulur ama dictionary farklıdır.",
+      "examples": [
+        {
+          "title": "Set Oluşturma",
+          "explanation": "Benzersiz sayılar:",
+          "code": "sayilar = {1, 2, 2, 3, 3, 3}\nprint(sayilar)  # Tekrarlar otomatik silinir\nprint(len(sayilar))",
+          "output": "{1, 2, 3}\n3"
+        }
+      ]
+    },
+    {
+      "type": "practice",
+      "title": "Set Egzersizi",
+      "exercise": {
+        "id": "set_basic",
+        "instructions": "Tekrarlayan sayıları içeren bir set oluştur ve benzersiz sayıları yazdır",
+        "starter_code": "sayilar = {1, 2, 2, 3, 3, 4, 4, 5}\nprint(sayilar)",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "{1, 2, 3, 4, 5}"
+          }
+        ],
+        "hints": [
+          "Set {} ile oluştur",
+          "Tekrarlar otomatik silinir"
+        ]
+      }
+    },
+    {
+      "type": "practice",
+      "title": "22 Sets Egzersizi",
+      "exercise": {
+        "id": "22_sets_practice",
+        "instructions": "tekrarsız değer koleksiyonları öğren pratiği yapın",
+        "starter_code": "print('Egzersiz alanı')",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "Egzersiz"
+          }
+        ],
+        "hints": [
+          "Adımları takip et",
+          "Konsolu kontrol et"
+        ]
+      }
+    }
+  ]
+}

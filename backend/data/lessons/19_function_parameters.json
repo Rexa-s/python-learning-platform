@@ -1,0 +1,60 @@
+{
+  "id": "19_function_parameters",
+  "title": "Fonksiyon Parametreleri",
+  "order": 19,
+  "week": 6,
+  "description": "Fonksiyonlara veri geçirmeyi öğren",
+  "sections": [
+    {
+      "type": "theory",
+      "title": "Parametreler ve Argümanlar",
+      "content": "Fonksiyonlara veri geçmek için parantez içinde parametreler tanımlarız.",
+      "examples": [
+        {
+          "title": "Parametre Örneği",
+          "explanation": "İsim parametresi alan fonksiyon:",
+          "code": "def selamla(ad):\n    print('Merhaba ' + ad)\n\nselamla('Ahmet')\nselamla('Zeynep')",
+          "output": "Merhaba Ahmet\nMerhaba Zeynep"
+        }
+      ]
+    },
+    {
+      "type": "practice",
+      "title": "Parametre Egzersizi",
+      "exercise": {
+        "id": "func_params",
+        "instructions": "İki sayıyı toplayan bir fonksiyon yaz ve sonuç yazdır",
+        "starter_code": "def topla(a, b):\n    sonuc = a + b\n    print(sonuc)\n\ntopla(5, 3)\ntopla(10, 20)",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "8"
+          }
+        ],
+        "hints": [
+          "Parametreleri parantez içinde tanımla",
+          "İki parametre kullan"
+        ]
+      }
+    },
+    {
+      "type": "practice",
+      "title": "19 Function Parameters Egzersizi",
+      "exercise": {
+        "id": "19_function_parameters_practice",
+        "instructions": "fonksiyonlara veri geçirmeyi öğren pratiği yapın",
+        "starter_code": "print('Egzersiz alanı')",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "Egzersiz"
+          }
+        ],
+        "hints": [
+          "Adımları takip et",
+          "Konsolu kontrol et"
+        ]
+      }
+    }
+  ]
+}

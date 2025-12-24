@@ -1,0 +1,41 @@
+{
+  "id": "14_lists",
+  "title": "Listeler (Lists)",
+  "order": 14,
+  "week": 5,
+  "description": "Birden fazla değeri bir yerde saklamayı öğren",
+  "sections": [
+    {
+      "type": "theory",
+      "title": "Liste Nedir?",
+      "content": "**Liste**, birden fazla değeri bir değişkende saklar. Köşeli parantez **[]** ile oluşturulur.",
+      "examples": [
+        {
+          "title": "Liste Oluşturma",
+          "explanation": "Liste oluşturma ve erişme:",
+          "code": "renkler = ['kırmızı', 'yeşil', 'mavi']\n\nprint(renkler[0])  # İlk öğe\nprint(renkler[1])  # İkinci öğe\nprint(renkler[2])  # Üçüncü öğe",
+          "output": "kırmızı\nyeşil\nmavi"
+        }
+      ]
+    },
+    {
+      "type": "practice",
+      "title": "Liste Egzersizi",
+      "exercise": {
+        "id": "lists_basic",
+        "instructions": "İçinde 3 meyve adı olan bir liste oluştur ve hepsini yazdır",
+        "starter_code": "meyveler = ['elma', 'armut', 'muz']\n\nprint(meyveler[0])\nprint(meyveler[1])\nprint(meyveler[2])",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "elma"
+          }
+        ],
+        "hints": [
+          "Liste köşeli parantez ile oluştur",
+          "Öğelere index ile erişim: liste[0], liste[1]"
+        ]
+      }
+    }
+  ]
+}

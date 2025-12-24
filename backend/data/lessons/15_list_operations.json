@@ -1,0 +1,41 @@
+{
+  "id": "15_list_operations",
+  "title": "Liste Operasyonları",
+  "order": 15,
+  "week": 5,
+  "description": "Listelerle işlem yapmayı öğren",
+  "sections": [
+    {
+      "type": "theory",
+      "title": "append, len, for ile Listeler",
+      "content": "- **append()**: Listeye yeni öğe ekle\n- **len()**: Listedeki eleman sayısını öğren\n- **for**: Listedeki her öğeyi döngü ile işle",
+      "examples": [
+        {
+          "title": "Liste İşlemleri",
+          "explanation": "Listeyi kullanma:",
+          "code": "sayilar = [1, 2, 3]\nsayilar.append(4)\nsayilar.append(5)\n\nprint('Sayılar:', sayilar)\nprint('Toplam:', len(sayilar))\n\nfor sayi in sayilar:\n    print(sayi)",
+          "output": "Sayılar: [1, 2, 3, 4, 5]\nToplam: 5\n1\n2\n3\n4\n5"
+        }
+      ]
+    },
+    {
+      "type": "practice",
+      "title": "Liste İşlem Egzersizi",
+      "exercise": {
+        "id": "list_operations",
+        "instructions": "Boş bir liste oluştur, 5 sayı ekle, hepsini yazdır",
+        "starter_code": "sayilar = []\nsayilar.append(10)\nsayilar.append(20)\nsayilar.append(30)\nsayilar.append(40)\nsayilar.append(50)\n\nfor sayi in sayilar:\n    print(sayi)",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "10"
+          }
+        ],
+        "hints": [
+          "append() ile ekle",
+          "for ile döngü yap"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "id": "24_string_split_join",
+  "title": "String split() ve join()",
+  "order": 24,
+  "week": 7,
+  "description": "String'leri parçalara ayırıp birleştirmeyi öğren",
+  "sections": [
+    {
+      "type": "theory",
+      "title": "split() ve join() Metodları",
+      "content": "- **split()**: String'i parça\n- **join()**: Parçaları birleştir",
+      "examples": [
+        {
+          "title": "split ve join",
+          "explanation": "String işlemleri:",
+          "code": "cumle = 'Python çok eğlenceli'\nkelimeler = cumle.split()  # Boşluğa göre böl\nprint(kelimeler)\n\nbirlesik = ' '.join(kelimeler)  # Boşlukla birleştir\nprint(birlesik)",
+          "output": "['Python', 'çok', 'eğlenceli']\nPython çok eğlenceli"
+        }
+      ]
+    },
+    {
+      "type": "practice",
+      "title": "split() Egzersizi",
+      "exercise": {
+        "id": "split_join",
+        "instructions": "Bir cümleyi kelimelere böl ve kelime sayısını yazdır",
+        "starter_code": "cumle = 'Python programlama dili'\nkelimeler = cumle.split()\nprint(len(kelimeler))",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "3"
+          }
+        ],
+        "hints": [
+          "split() boşluğa göre böler"
+        ]
+      }
+    },
+    {
+      "type": "practice",
+      "title": "24 String Split Join Egzersizi",
+      "exercise": {
+        "id": "24_string_split_join_practice",
+        "instructions": "string'leri parçalara ayırıp birleştirmeyi öğren pratiği yapın",
+        "starter_code": "print('Egzersiz alanı')",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "Egzersiz"
+          }
+        ],
+        "hints": [
+          "Adımları takip et",
+          "Konsolu kontrol et"
+        ]
+      }
+    }
+  ]
+}

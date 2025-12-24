@@ -1,0 +1,42 @@
+{
+  "id": "12_nested_loops",
+  "title": "İç İçe Döngüler",
+  "order": 12,
+  "week": 4,
+  "description": "Döngüleri iç içe kullanmayı öğren",
+  "sections": [
+    {
+      "type": "theory",
+      "title": "Nested Loops",
+      "content": "Döngü içinde döngü oluşturabilirsin. İç döngü, dış döngünün her bir adımında komple çalışır.",
+      "examples": [
+        {
+          "title": "İç İçe Döngü",
+          "explanation": "3x3 kare çizmek:",
+          "code": "for i in range(3):\n    for j in range(3):\n        print('*', end=' ')\n    print()",
+          "output": "* * * \n* * * \n* * *"
+        }
+      ]
+    },
+    {
+      "type": "practice",
+      "title": "Döngü Deseni",
+      "exercise": {
+        "id": "nested_loops",
+        "instructions": "İç içe döngü ile 4x4 yıldız deseni çiz",
+        "starter_code": "for i in range(4):\n    for j in range(4):\n        print('*', end=' ')\n    print()",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "*"
+          }
+        ],
+        "hints": [
+          "Dış döngü satır sayısı",
+          "İç döngü sütun sayısı",
+          "print('', end=' ') aynı satırda yazdırır"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "10_while_loop",
+  "title": "While Döngüsü",
+  "order": 10,
+  "week": 4,
+  "description": "Tekrarlayan kod yazacağını öğren",
+  "sections": [
+    {
+      "type": "theory",
+      "title": "while İfadesi",
+      "content": "**while** döngüsü, bir koşul doğru olduğu sürece kodu tekrarlar.",
+      "examples": [
+        {
+          "title": "while Döngüsü",
+          "explanation": "1'den 5'e kadar yazdır:",
+          "code": "i = 1\nwhile i <= 5:\n    print(i)\n    i = i + 1",
+          "output": "1\n2\n3\n4\n5"
+        }
+      ]
+    },
+    {
+      "type": "practice",
+      "title": "1'den 10'a Kadar Yazdırma",
+      "exercise": {
+        "id": "while_1_to_10",
+        "instructions": "while döngüsü ile 1'den 10'a kadar sayıları yazdır",
+        "starter_code": "i = 1\nwhile i <= 10:\n    print(i)\n    i = i + 1",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "1"
+          }
+        ],
+        "hints": [
+          "i = 1 ile başla",
+          "Koşulu i <= 10 yap",
+          "i = i + 1 ile artır"
+        ]
+      }
+    }
+  ]
+}

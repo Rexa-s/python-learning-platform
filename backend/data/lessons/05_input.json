@@ -1,0 +1,42 @@
+{
+  "id": "05_input",
+  "title": "Input - Kullanıcı Girdisi Alma",
+  "order": 5,
+  "week": 2,
+  "description": "Kullanıcıdan veri almayı öğren",
+  "sections": [
+    {
+      "type": "theory",
+      "title": "input() Fonksiyonu",
+      "content": "Kullanıcıdan veri almak için **input()** fonksiyonunu kullanırız. input() fonksiyonu daima string (metin) döndürür.",
+      "examples": [
+        {
+          "title": "Kullanıcı Girdisi Alma",
+          "explanation": "Basit input() kullanımı:",
+          "code": "ad = input('Adınızı girin: ')\nprint('Merhaba ' + ad)",
+          "output": "Adınızı girin: Ahmet\nMerhaba Ahmet"
+        }
+      ]
+    },
+    {
+      "type": "practice",
+      "title": "Input Egzersizi",
+      "exercise": {
+        "id": "input_practice",
+        "instructions": "Kullanıcıdan ismini al ve ekrana 'Hoş geldiniz İsim!' şeklinde yazdır",
+        "starter_code": "# Kullanıcıdan isim al\nisim = input('Adınız: ')\n\n# Ekrana yazdır",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "Adınız:"
+          }
+        ],
+        "hints": [
+          "input() fonksiyonu ile kullanıcıdan veri al",
+          "String birleştirme ile mesaj oluştur",
+          "print() ile sonucu yazdır"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "07_if_statement",
+  "title": "If (Eğer) İfadeleri",
+  "order": 7,
+  "week": 3,
+  "description": "Koşullu komutları öğren",
+  "sections": [
+    {
+      "type": "theory",
+      "title": "if İfadesi",
+      "content": "**if** ile belirli bir koşul doğru ise kodu çalıştırabilirsin.\n\nYaygın karşılaştırma operatörleri:\n- **==** : Eşit mi?\n- **!=** : Eşit değil mi?\n- **>** : Büyük mü?\n- **<** : Küçük mü?\n- **>=** : Büyük veya eşit mi?\n- **<=** : Küçük veya eşit mi?",
+      "examples": [
+        {
+          "title": "if Örneği",
+          "explanation": "Basit if ifadesi:",
+          "code": "yas = 15\n\nif yas >= 18:\n    print('Yetişkinsiniz')\nelse:\n    print('Reşit değilsiniz')",
+          "output": "Reşit değilsiniz"
+        }
+      ]
+    },
+    {
+      "type": "practice",
+      "title": "Yaş Kontrolü",
+      "exercise": {
+        "id": "age_check",
+        "instructions": "Kullanıcıdan yaşını al. Eğer 18 veya daha büyükse 'Yetişkinsiniz' yazdır, değilse 'Reşit değilsiniz' yazdır",
+        "starter_code": "yas = int(input('Yaşınız: '))\n\nif yas >= 18:\n    print('Yetişkinsiniz')\nelse:\n    print('Reşit değilsiniz')",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "Yaşınız:"
+          }
+        ],
+        "hints": [
+          "input() ile yaş al",
+          "int() ile dönüştür",
+          ">= operatörü kullan"
+        ]
+      }
+    }
+  ]
+}

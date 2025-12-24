@@ -1,0 +1,60 @@
+{
+  "id": "26_modules",
+  "title": "Modüller (Modules)",
+  "order": 26,
+  "week": 8,
+  "description": "Hazır kodları kullanmayı öğren",
+  "sections": [
+    {
+      "type": "theory",
+      "title": "import ile Modül Kullanma",
+      "content": "**import** ile Python'un hazır modüllerini kullanabilirsin.\n\nPopüler modüller:\n- **math**: Matematik işlemleri\n- **random**: Rastgele sayılar\n- **time**: Zaman işlemleri",
+      "examples": [
+        {
+          "title": "math Modülü",
+          "explanation": "Matematiksel işlemler:",
+          "code": "import math\nprint(math.sqrt(16))  # Karekök\nprint(math.pi)        # Pi sayısı\nprint(math.pow(2, 3)) # 2 üzeri 3",
+          "output": "4.0\n3.141592653589793\n8.0"
+        }
+      ]
+    },
+    {
+      "type": "practice",
+      "title": "Modül Egzersizi",
+      "exercise": {
+        "id": "modules",
+        "instructions": "math modülü kullanarak 25'in karekökünü hesapla",
+        "starter_code": "import math\nsqrt = math.sqrt(25)\nprint(sqrt)",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "5"
+          }
+        ],
+        "hints": [
+          "import math ile modülü yükle",
+          "math.sqrt() karekök"
+        ]
+      }
+    },
+    {
+      "type": "practice",
+      "title": "26 Modules Egzersizi",
+      "exercise": {
+        "id": "26_modules_practice",
+        "instructions": "hazır kodları kullanmayı öğren pratiği yapın",
+        "starter_code": "print('Egzersiz alanı')",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "Egzersiz"
+          }
+        ],
+        "hints": [
+          "Adımları takip et",
+          "Konsolu kontrol et"
+        ]
+      }
+    }
+  ]
+}

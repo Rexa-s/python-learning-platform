@@ -1,0 +1,42 @@
+{
+  "id": "08_elif",
+  "title": "elif (Başka Eğer) İfadeleri",
+  "order": 8,
+  "week": 3,
+  "description": "Birden fazla koşulu kontrol etmeyi öğren",
+  "sections": [
+    {
+      "type": "theory",
+      "title": "elif ve else",
+      "content": "- **if**: İlk koşulu kontrol et\n- **elif**: İf yanlışsa, başka bir koşulu kontrol et\n- **else**: Tüm koşullar yanlışsa bunu çalıştır",
+      "examples": [
+        {
+          "title": "elif Örneği",
+          "explanation": "Not sınıflandırması:",
+          "code": "not_ = 85\n\nif not_ >= 90:\n    print('A')\nelif not_ >= 80:\n    print('B')\nelif not_ >= 70:\n    print('C')\nelse:\n    print('F')",
+          "output": "B"
+        }
+      ]
+    },
+    {
+      "type": "practice",
+      "title": "Not Sınıflandırması",
+      "exercise": {
+        "id": "grade_classify",
+        "instructions": "Kullanıcıdan not al. 90-100: A, 80-89: B, 70-79: C, <70: F yazdır",
+        "starter_code": "not_ = int(input('Notunuz: '))\n\nif not_ >= 90:\n    print('A')\nelif not_ >= 80:\n    print('B')\nelif not_ >= 70:\n    print('C')\nelse:\n    print('F')",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "Notunuz:"
+          }
+        ],
+        "hints": [
+          "elif ile çoklu koşul kontrol et",
+          "Sıra önemli - en büyük koşuldan başla",
+          ">= operatörü kullan"
+        ]
+      }
+    }
+  ]
+}

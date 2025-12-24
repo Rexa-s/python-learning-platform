@@ -1,0 +1,40 @@
+{
+  "id": "45_turtle_animation",
+  "title": "Turtle Animasyon",
+  "order": 45,
+  "week": 13,
+  "description": "Hareket eden çizimler",
+  "sections": [
+    {
+      "type": "theory",
+      "title": "Turtle Animasyon",
+      "content": "Hareket eden çizimler",
+      "examples": [
+        {
+          "title": "Örnek",
+          "explanation": "Bu konuyu daha sonra öğreneceksiniz",
+          "code": "# Örnek kod\npass",
+          "output": "Başarılı"
+        }
+      ]
+    },
+    {
+      "type": "practice",
+      "title": "Turtle Animasyon Egzersizi",
+      "exercise": {
+        "id": "45_turtle_animation_ex",
+        "instructions": "hareket eden çizimler egzersizi",
+        "starter_code": "print('Egzersiz yapıyorum')",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "Egzersiz"
+          }
+        ],
+        "hints": [
+          "Öğrendikleri uygula"
+        ]
+      }
+    }
+  ]
+}

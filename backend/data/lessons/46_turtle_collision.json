@@ -1,0 +1,40 @@
+{
+  "id": "46_turtle_collision",
+  "title": "Turtle Çarpışma Tespiti",
+  "order": 46,
+  "week": 14,
+  "description": "Nesneler arasında çarpışma",
+  "sections": [
+    {
+      "type": "theory",
+      "title": "Turtle Çarpışma Tespiti",
+      "content": "Nesneler arasında çarpışma",
+      "examples": [
+        {
+          "title": "Örnek",
+          "explanation": "Bu konuyu daha sonra öğreneceksiniz",
+          "code": "# Örnek kod\npass",
+          "output": "Başarılı"
+        }
+      ]
+    },
+    {
+      "type": "practice",
+      "title": "Turtle Çarpışma Tespiti Egzersizi",
+      "exercise": {
+        "id": "46_turtle_collision_ex",
+        "instructions": "nesneler arasında çarpışma egzersizi",
+        "starter_code": "print('Egzersiz yapıyorum')",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "Egzersiz"
+          }
+        ],
+        "hints": [
+          "Öğrendikleri uygula"
+        ]
+      }
+    }
+  ]
+}

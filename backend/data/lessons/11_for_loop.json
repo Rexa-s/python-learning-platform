@@ -1,0 +1,41 @@
+{
+  "id": "11_for_loop",
+  "title": "For Döngüsü",
+  "order": 11,
+  "week": 4,
+  "description": "range() ile döngüleri öğren",
+  "sections": [
+    {
+      "type": "theory",
+      "title": "for ve range()",
+      "content": "**for** döngüsü, **range()** ile tanımlı sayılar kadar tekrar eder.\n\n- **range(5)**: 0, 1, 2, 3, 4\n- **range(1, 6)**: 1, 2, 3, 4, 5\n- **range(0, 10, 2)**: 0, 2, 4, 6, 8",
+      "examples": [
+        {
+          "title": "for Döngüsü",
+          "explanation": "for ile 1'den 5'e kadar:",
+          "code": "for i in range(1, 6):\n    print(i)",
+          "output": "1\n2\n3\n4\n5"
+        }
+      ]
+    },
+    {
+      "type": "practice",
+      "title": "for Döngüsü Egzersizi",
+      "exercise": {
+        "id": "for_loop_practice",
+        "instructions": "for döngüsü ile 0'dan 9'a kadar sayıları yazdır",
+        "starter_code": "for i in range(10):\n    print(i)",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "0"
+          }
+        ],
+        "hints": [
+          "range(10) 0'dan 9'a kadar sayıları verir",
+          "range() içinde sayıları tanımla"
+        ]
+      }
+    }
+  ]
+}

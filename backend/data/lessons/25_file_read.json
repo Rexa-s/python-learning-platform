@@ -1,0 +1,61 @@
+{
+  "id": "25_file_read",
+  "title": "Dosya Okuma",
+  "order": 25,
+  "week": 7,
+  "description": "Dosyalardan veri okumayı öğren",
+  "sections": [
+    {
+      "type": "theory",
+      "title": "open() ile Dosya Okuma",
+      "content": "- **open()**: Dosya aç\n- **read()**: Dosyanın tamamını oku\n- **close()**: Dosyayı kapat",
+      "examples": [
+        {
+          "title": "Dosya Okuma",
+          "explanation": "Dosya okuma örneği:",
+          "code": "dosya = open('ornek.txt', 'r')\nicerik = dosya.read()\nprint(icerik)\ndosya.close()",
+          "output": "Dosyadaki içerik buraya yazılır"
+        }
+      ]
+    },
+    {
+      "type": "practice",
+      "title": "Dosya Okuma Egzersizi",
+      "exercise": {
+        "id": "file_read",
+        "instructions": "Dosya okuma kavramını anla (gerçek dosya işlemi platform'da)",
+        "starter_code": "# Dosya okuma örneği\n# dosya = open('test.txt', 'r')\n# print(dosya.read())\n# dosya.close()\n\nprint('Dosya okuma kavramı anladım')",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "Dosya okuma kavramı anladım"
+          }
+        ],
+        "hints": [
+          "open() ile dosya aç",
+          "read() ile içeriği oku",
+          "close() ile kapat"
+        ]
+      }
+    },
+    {
+      "type": "practice",
+      "title": "25 File Read Egzersizi",
+      "exercise": {
+        "id": "25_file_read_practice",
+        "instructions": "dosyalardan veri okumayı öğren pratiği yapın",
+        "starter_code": "print('Egzersiz alanı')",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "Egzersiz"
+          }
+        ],
+        "hints": [
+          "Adımları takip et",
+          "Konsolu kontrol et"
+        ]
+      }
+    }
+  ]
+}

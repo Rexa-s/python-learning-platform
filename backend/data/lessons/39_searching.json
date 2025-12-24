@@ -1,0 +1,40 @@
+{
+  "id": "39_searching",
+  "title": "Arama Algoritmaları",
+  "order": 39,
+  "week": 11,
+  "description": "Verilerde arama yap",
+  "sections": [
+    {
+      "type": "theory",
+      "title": "Arama Algoritmaları",
+      "content": "Verilerde arama yap",
+      "examples": [
+        {
+          "title": "Örnek",
+          "explanation": "Bu konuyu daha sonra öğreneceksiniz",
+          "code": "# Örnek kod\npass",
+          "output": "Başarılı"
+        }
+      ]
+    },
+    {
+      "type": "practice",
+      "title": "Arama Algoritmaları Egzersizi",
+      "exercise": {
+        "id": "39_searching_ex",
+        "instructions": "verilerde arama yap egzersizi",
+        "starter_code": "print('Egzersiz yapıyorum')",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "Egzersiz"
+          }
+        ],
+        "hints": [
+          "Öğrendikleri uygula"
+        ]
+      }
+    }
+  ]
+}

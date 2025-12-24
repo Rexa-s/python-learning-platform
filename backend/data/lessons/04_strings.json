@@ -1,0 +1,55 @@
+{
+  "id": "04_strings",
+  "title": "String (Metin) İşlemleri",
+  "order": 4,
+  "description": "Python'da metinler ile çalışmayı öğren",
+  "week": 1,
+  "sections": [
+    {
+      "type": "theory",
+      "title": "String Nedir?",
+      "content": "String (metin), tırnak işaretleri içine yazılan karakter dizileridir. Python'da **tek tırnak** (') veya **çift tırnak** (\") kullanabilirsin.",
+      "examples": [
+        {
+          "title": "String Oluşturma",
+          "explanation": "Farklı şekillerde string oluşturabilirsin:",
+          "code": "# String oluşturma\nisim = 'Ahmet'\nsoyisim = \"Yılmaz\"\n\nprint(isim)\nprint(soyisim)",
+          "output": "Ahmet\nYılmaz"
+        }
+      ]
+    },
+    {
+      "type": "theory",
+      "title": "String Birleştirme",
+      "content": "Stringleri **+** operatörü ile birleştirebilirsin. Buna *concatenation* denir.",
+      "examples": [
+        {
+          "title": "String Birleştirme (+)",
+          "explanation": "İki stringi birleştirmek:",
+          "code": "ad = 'Ahmet'\nsoyad = 'Yılmaz'\n\ntam_ad = ad + ' ' + soyad\nprint(tam_ad)",
+          "output": "Ahmet Yılmaz"
+        }
+      ]
+    },
+    {
+      "type": "practice",
+      "title": "String Birleştirme Egzersizi",
+      "exercise": {
+        "id": "string_concat",
+        "instructions": "Bir string değişkenine adını, başka bir string değişkenine soyadını ata. Sonra ikisini birleştirerek ekrana yazdır.\n\n**Örnek**: Adın 'Ali' soyadın 'Kaya' ise çıktı 'Ali Kaya' olmalı",
+        "starter_code": "ad = 'Ali'\nsoyad = 'Kaya'\n\n# İkisini birleştir ve yazdır\nprint()",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "Ali Kaya"
+          }
+        ],
+        "hints": [
+          "İki stringi + operatörü ile birleştirebilirsin",
+          "Aralara boşluk eklemek için ' ' stringi ekle",
+          "print() fonksiyonu ile sonucu yazdır"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "06_type_conversion",
+  "title": "Tür Dönüşümü (Type Conversion)",
+  "order": 6,
+  "week": 2,
+  "description": "Veri tiplerini dönüştürmeyi öğren",
+  "sections": [
+    {
+      "type": "theory",
+      "title": "int(), float(), str() Fonksiyonları",
+      "content": "input() string döndürür ama matematik yapmak istiyorsak sayıya dönüştürmemiz gerekir.\n\n- **int()**: String'i tam sayıya dönüştür\n- **float()**: String'i ondalık sayıya dönüştür\n- **str()**: Herhangi bir değeri string'e dönüştür",
+      "examples": [
+        {
+          "title": "Tür Dönüşümü",
+          "explanation": "String girdisini sayıya dönüştürmek:",
+          "code": "yas_text = input('Yaşınız: ')\nyas = int(yas_text)\n\nprint('Siz ' + str(yas) + ' yaşındasınız')\nprint('5 yıl sonra ' + str(yas + 5) + ' yaşında olacaksınız')",
+          "output": "Yaşınız: 15\nSiz 15 yaşındasınız\n5 yıl sonra 20 yaşında olacaksınız"
+        }
+      ]
+    },
+    {
+      "type": "practice",
+      "title": "Yaş Hesaplama",
+      "exercise": {
+        "id": "age_calc",
+        "instructions": "Kullanıcıdan yaşını al (string olarak gelir), tam sayıya dönüştür ve 10 yıl sonraki yaşını hesapla",
+        "starter_code": "yas = input('Yaşınız: ')\n\n# Tam sayıya dönüştür\n\n# 10 yıl sonraki yaş\n\n# Sonucu yazdır",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "Yaşınız:"
+          }
+        ],
+        "hints": [
+          "int() ile string'i sayıya dönüştür",
+          "Dönüştürülen değeri başka değişkene ata",
+          "Yaşa 10 ekle ve yazdır"
+        ]
+      }
+    }
+  ]
+}

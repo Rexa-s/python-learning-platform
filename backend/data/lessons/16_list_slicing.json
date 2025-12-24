@@ -1,0 +1,60 @@
+{
+  "id": "16_list_slicing",
+  "title": "Liste Dilimleme (Slicing)",
+  "order": 16,
+  "week": 5,
+  "description": "Liste parçalarını almayı öğren",
+  "sections": [
+    {
+      "type": "theory",
+      "title": "Liste Dilimleme",
+      "content": "Listeden bir kısmını alabilirsin. **liste[başlangıç:bitiş]** şeklinde kullanılır.",
+      "examples": [
+        {
+          "title": "Dilimleme Örneği",
+          "explanation": "Liste parçaları alma:",
+          "code": "sayilar = [0, 1, 2, 3, 4, 5]\nprint(sayilar[1:4])  # 1, 2, 3\nprint(sayilar[:3])   # 0, 1, 2\nprint(sayilar[3:])   # 3, 4, 5",
+          "output": "[1, 2, 3]\n[0, 1, 2]\n[3, 4, 5]"
+        }
+      ]
+    },
+    {
+      "type": "practice",
+      "title": "Dilimleme Egzersizi",
+      "exercise": {
+        "id": "slicing",
+        "instructions": "Liste [10, 20, 30, 40, 50] ile başlangıç ve bitiş belirleyerek ortadaki 3 elemanı al",
+        "starter_code": "sayilar = [10, 20, 30, 40, 50]\nprint(sayilar[1:4])",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "[20, 30, 40]"
+          }
+        ],
+        "hints": [
+          "Başlangıç indeksi 1",
+          "Bitiş indeksi 4"
+        ]
+      }
+    },
+    {
+      "type": "practice",
+      "title": "16 List Slicing Egzersizi",
+      "exercise": {
+        "id": "16_list_slicing_practice",
+        "instructions": "liste parçalarını almayı öğren pratiği yapın",
+        "starter_code": "print('Egzersiz alanı')",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "Egzersiz"
+          }
+        ],
+        "hints": [
+          "Adımları takip et",
+          "Konsolu kontrol et"
+        ]
+      }
+    }
+  ]
+}

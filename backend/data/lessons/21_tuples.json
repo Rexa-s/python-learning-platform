@@ -1,0 +1,60 @@
+{
+  "id": "21_tuples",
+  "title": "Tuple'lar (Sabit Listeler)",
+  "order": 21,
+  "week": 6,
+  "description": "Değiştirilemez listeler öğren",
+  "sections": [
+    {
+      "type": "theory",
+      "title": "Tuple Nedir?",
+      "content": "**Tuple**, listeler gibi birden fazla değer saklar ama değiştirilemeyen sabit bir veri tipidir. Normal parantez () ile oluşturulur.",
+      "examples": [
+        {
+          "title": "Tuple Oluşturma",
+          "explanation": "Koordinatlar tuple'da sakla:",
+          "code": "koordinat = (10, 20)\nprint(koordinat[0])\nprint(koordinat[1])\n\nrenkler = ('kırmızı', 'yeşil', 'mavi')\nfor renk in renkler:\n    print(renk)",
+          "output": "10\n20\nkırmızı\nyeşil\nmavi"
+        }
+      ]
+    },
+    {
+      "type": "practice",
+      "title": "Tuple Egzersizi",
+      "exercise": {
+        "id": "tuple_basic",
+        "instructions": "Bir tuple oluştur ve elemanlarına eriş",
+        "starter_code": "nokta = (5, 15)\nprint(nokta[0])\nprint(nokta[1])",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "5"
+          }
+        ],
+        "hints": [
+          "Tuple normal parantez ile oluştur",
+          "Indeks ile eriş"
+        ]
+      }
+    },
+    {
+      "type": "practice",
+      "title": "21 Tuples Egzersizi",
+      "exercise": {
+        "id": "21_tuples_practice",
+        "instructions": "değiştirilemez listeler öğren pratiği yapın",
+        "starter_code": "print('Egzersiz alanı')",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "Egzersiz"
+          }
+        ],
+        "hints": [
+          "Adımları takip et",
+          "Konsolu kontrol et"
+        ]
+      }
+    }
+  ]
+}

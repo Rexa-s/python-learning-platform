@@ -1,0 +1,60 @@
+{
+  "id": "20_function_return",
+  "title": "return ile Değer Döndürme",
+  "order": 20,
+  "week": 6,
+  "description": "Fonksiyonlardan değer döndürmeyi öğren",
+  "sections": [
+    {
+      "type": "theory",
+      "title": "return Kullanımı",
+      "content": "**return** ile fonksiyon bir değer geri döndürebilir.",
+      "examples": [
+        {
+          "title": "return Örneği",
+          "explanation": "Karenin alanını hesaplayan fonksiyon:",
+          "code": "def kare_alan(kenar):\n    alan = kenar * kenar\n    return alan\n\nsonuc = kare_alan(5)\nprint('5x5 karenin alanı:', sonuc)",
+          "output": "5x5 karenin alanı: 25"
+        }
+      ]
+    },
+    {
+      "type": "practice",
+      "title": "return Egzersizi",
+      "exercise": {
+        "id": "func_return",
+        "instructions": "İki sayıyı çarpan bir fonksiyon yaz ve sonucu return et",
+        "starter_code": "def carp(a, b):\n    return a * b\n\nsonuc = carp(4, 5)\nprint(sonuc)",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "20"
+          }
+        ],
+        "hints": [
+          "return ile sonuç döndür",
+          "Sonucu değişkene ata"
+        ]
+      }
+    },
+    {
+      "type": "practice",
+      "title": "20 Function Return Egzersizi",
+      "exercise": {
+        "id": "20_function_return_practice",
+        "instructions": "fonksiyonlardan değer döndürmeyi öğren pratiği yapın",
+        "starter_code": "print('Egzersiz alanı')",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "Egzersiz"
+          }
+        ],
+        "hints": [
+          "Adımları takip et",
+          "Konsolu kontrol et"
+        ]
+      }
+    }
+  ]
+}

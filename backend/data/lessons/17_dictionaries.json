@@ -1,0 +1,60 @@
+{
+  "id": "17_dictionaries",
+  "title": "Sözlükler (Dictionaries)",
+  "order": 17,
+  "week": 5,
+  "description": "Anahtar-değer çiftleri ile çalışmayı öğren",
+  "sections": [
+    {
+      "type": "theory",
+      "title": "Dictionary Nedir?",
+      "content": "**Dictionary**, anahtar-değer çiftleri saklar. Küme parantezi **{}** ile oluşturulur.",
+      "examples": [
+        {
+          "title": "Dictionary Oluşturma",
+          "explanation": "Kişi bilgileri:",
+          "code": "kisi = {'ad': 'Ahmet', 'yas': 25, 'sehir': 'Istanbul'}\nprint(kisi['ad'])\nprint(kisi['yas'])",
+          "output": "Ahmet\n25"
+        }
+      ]
+    },
+    {
+      "type": "practice",
+      "title": "Dictionary Egzersizi",
+      "exercise": {
+        "id": "dict_basic",
+        "instructions": "Bir kişinin adı, yaşı ve şehri bilgilerini dictionary'de sakla ve yazdır",
+        "starter_code": "ogrenci = {'ad': 'Ali', 'yas': 16, 'sehir': 'Ankara'}\nprint(ogrenci['ad'])\nprint(ogrenci['yas'])\nprint(ogrenci['sehir'])",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "Ali"
+          }
+        ],
+        "hints": [
+          "Dictionary küme parantezi ile oluştur",
+          "Değerlere anahtar ile erişim"
+        ]
+      }
+    },
+    {
+      "type": "practice",
+      "title": "17 Dictionaries Egzersizi",
+      "exercise": {
+        "id": "17_dictionaries_practice",
+        "instructions": "anahtar-değer çiftleri ile çalışmayı öğren pratiği yapın",
+        "starter_code": "print('Egzersiz alanı')",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "Egzersiz"
+          }
+        ],
+        "hints": [
+          "Adımları takip et",
+          "Konsolu kontrol et"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": "09_logical_operators",
+  "title": "Mantıksal Operatörler (and, or, not)",
+  "order": 9,
+  "week": 3,
+  "description": "Birden fazla koşulu birleştirmeyi öğren",
+  "sections": [
+    {
+      "type": "theory",
+      "title": "and, or, not Operatörleri",
+      "content": "- **and**: HER İKİ koşul da doğru ise True\n- **or**: HERHANGI BİRİ koşul doğru ise True\n- **not**: Koşulu tersine çevir",
+      "examples": [
+        {
+          "title": "and Operatörü",
+          "explanation": "Her iki koşul da sağlanmalı:",
+          "code": "yas = 15\n\nif yas >= 13 and yas < 20:\n    print('Genç')\nelse:\n    print('Genç değil')",
+          "output": "Genç"
+        }
+      ]
+    },
+    {
+      "type": "practice",
+      "title": "Mantıksal Operatör Egzersizi",
+      "exercise": {
+        "id": "logical_ops",
+        "instructions": "Kullanıcıdan yaş ve para miktarı al. Eğer yaş 18 ve para 100 ve üstüyse 'Evet' yazdır, değilse 'Hayır' yazdır",
+        "starter_code": "yas = int(input('Yaş: '))\npara = int(input('Para: '))\n\nif yas >= 18 and para >= 100:\n    print('Evet')\nelse:\n    print('Hayır')",
+        "test_cases": [
+          {
+            "input": "",
+            "expected_output": "Yaş:"
+          }
+        ],
+        "hints": [
+          "and operatörü ile iki koşulu birleştir",
+          "Parantez kullanarak açıklık sağla"
+        ]
+      }
+    }
+  ]
+}
