@@ -1,8 +1,0 @@
-services:
-  - type: web
-    name: python-learning-platform
-    runtime: docker
-    dockerfile: ./Dockerfile
-    dockerfilePath: ./Dockerfile
-    envVars: []
-    autoDeploy: true
