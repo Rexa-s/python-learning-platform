@@ -20,6 +20,10 @@ os.environ['FLASK_ENV'] = 'production'
 def main():
     """Start the application"""
     try:
+        print(f"Python path: {sys.path}")
+        print(f"Backend dir: {backend_dir}")
+        print("Importing app...")
+
         # Import after adding to path
         from app import app
         from waitress import serve
@@ -31,9 +35,7 @@ def main():
         print("🐍 Python Öğrenme Platformu")
         print("=" * 60)
         print(f"\n✓ Sunucu başlatılıyor...")
-        print(f"✓ Adres: http://localhost:{port}")
-        print(f"\n💡 İpucu: Tarayıcı otomatik açılacak.")
-        print(f"   Açılmazsa: http://localhost:{port} adresine gidin")
+        print(f"✓ Adres: http://0.0.0.0:{port}")
         print(f"\nÇıkmak için: Ctrl+C basın\n")
 
         # Wait a moment then open browser (only if not on Render)
@@ -51,13 +53,14 @@ def main():
             browser_thread.start()
 
         # Start server
-        print(f"Waitress serveri başlatılıyor http://{host}:{port}\n")
+        print(f"Waitress serveri başlatılıyor...\n")
         serve(app, host=host, port=port, _quiet=False)
 
     except Exception as e:
+        import traceback
         print(f"\n❌ Hata oluştu: {e}")
-        print("\nLütfen Python'un doğru kurulu olduğundan emin olun.")
-        input("\nÇıkmak için Enter tuşuna basın...")
+        print(f"\nTraceback:")
+        traceback.print_exc()
         sys.exit(1)
 
 if __name__ == '__main__':
