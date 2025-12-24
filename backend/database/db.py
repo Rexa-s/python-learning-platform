@@ -20,22 +20,11 @@ class Database:
         os.makedirs(self.lessons_dir, exist_ok=True)
 
         self.init_database()
-        self.load_lessons_from_files()
 
     def init_database(self):
         """Initialize database with required tables"""
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
-
-        # Lessons table (metadata)
-        cursor.execute('''
-            CREATE TABLE IF NOT EXISTS lessons (
-                id TEXT PRIMARY KEY,
-                title TEXT NOT NULL,
-                order_num INTEGER NOT NULL,
-                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-            )
-        ''')
 
         # User progress table
         cursor.execute('''
@@ -46,8 +35,7 @@ class Database:
                 completed BOOLEAN DEFAULT FALSE,
                 last_code TEXT,
                 test_passed BOOLEAN DEFAULT FALSE,
-                completed_at TIMESTAMP,
-                FOREIGN KEY (lesson_id) REFERENCES lessons(id)
+                completed_at TIMESTAMP
             )
         ''')
 
@@ -60,83 +48,44 @@ class Database:
                 code TEXT NOT NULL,
                 output TEXT,
                 success BOOLEAN,
-                submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                FOREIGN KEY (lesson_id) REFERENCES lessons(id)
+                submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )
         ''')
 
         conn.commit()
         conn.close()
 
-    def load_lessons_from_files(self):
-        """Load all lesson files and insert into database"""
-        conn = sqlite3.connect(self.db_path)
-        cursor = conn.cursor()
+    def get_all_lessons(self):
+        """Get list of all lessons from JSON files"""
+        lessons = []
 
         if not os.path.exists(self.lessons_dir):
-            os.makedirs(self.lessons_dir, exist_ok=True)
+            return lessons
 
+        # Load all lesson JSON files
         lesson_files = sorted([f for f in os.listdir(self.lessons_dir) if f.endswith('.json')])
 
-        for file in lesson_files:
+        for filename in lesson_files:
+            lesson_file = os.path.join(self.lessons_dir, filename)
             try:
-                with open(os.path.join(self.lessons_dir, file), 'r', encoding='utf-8') as f:
-                    lesson_data = json.load(f)
-
-                    # Check if lesson already exists
-                    cursor.execute('SELECT id FROM lessons WHERE id = ?', (lesson_data.get('id'),))
-                    if not cursor.fetchone():
-                        cursor.execute('''
-                            INSERT INTO lessons (id, title, order_num)
-                            VALUES (?, ?, ?)
-                        ''', (
-                            lesson_data.get('id'),
-                            lesson_data.get('title'),
-                            lesson_data.get('order', 0)
-                        ))
+                with open(lesson_file, 'r', encoding='utf-8') as f:
+                    lesson_json = json.load(f)
+                    lessons.append({
+                        'id': lesson_json.get('id'),
+                        'title': lesson_json.get('title'),
+                        'order': lesson_json.get('order', 0),
+                        'description': lesson_json.get('description', ''),
+                        'week': lesson_json.get('week', 0)
+                    })
             except Exception as e:
-                print(f"Error loading lesson file {file}: {e}")
+                print(f"Error loading lesson file {filename}: {e}")
 
-        conn.commit()
-        conn.close()
-
-    def get_all_lessons(self):
-        """Get list of all lessons"""
-        conn = sqlite3.connect(self.db_path)
-        cursor = conn.cursor()
-
-        cursor.execute('''
-            SELECT id, title, order_num FROM lessons ORDER BY order_num
-        ''')
-
-        lessons = []
-        for row in cursor.fetchall():
-            # Get full lesson data from JSON file to get description and week
-            lesson_file = os.path.join(self.lessons_dir, f'{row[0]}.json')
-            description = ''
-            week = 0
-            try:
-                if os.path.exists(lesson_file):
-                    with open(lesson_file, 'r', encoding='utf-8') as f:
-                        lesson_json = json.load(f)
-                        description = lesson_json.get('description', '')
-                        week = lesson_json.get('week', 0)
-            except:
-                pass
-
-            lessons.append({
-                'id': row[0],
-                'title': row[1],
-                'order': row[2],
-                'description': description,
-                'week': week
-            })
-
-        conn.close()
+        # Sort by order
+        lessons.sort(key=lambda x: x['order'])
         return lessons
 
     def get_lesson(self, lesson_id):
-        """Get a specific lesson with full content"""
+        """Get a specific lesson with full content from JSON file"""
         lesson_file = os.path.join(self.lessons_dir, f'{lesson_id}.json')
 
         if os.path.exists(lesson_file):
@@ -150,38 +99,22 @@ class Database:
         return None
 
     def get_lesson_metadata(self, lesson_id):
-        """Get lesson metadata from database"""
-        conn = sqlite3.connect(self.db_path)
-        cursor = conn.cursor()
+        """Get lesson metadata from JSON file"""
+        lesson_file = os.path.join(self.lessons_dir, f'{lesson_id}.json')
 
-        cursor.execute('''
-            SELECT id, title, order_num FROM lessons WHERE id = ?
-        ''', (lesson_id,))
-
-        row = cursor.fetchone()
-        conn.close()
-
-        if row:
-            # Get full lesson data from JSON file
-            lesson_file = os.path.join(self.lessons_dir, f'{lesson_id}.json')
-            description = ''
-            week = 0
+        if os.path.exists(lesson_file):
             try:
-                if os.path.exists(lesson_file):
-                    with open(lesson_file, 'r', encoding='utf-8') as f:
-                        lesson_json = json.load(f)
-                        description = lesson_json.get('description', '')
-                        week = lesson_json.get('week', 0)
-            except:
-                pass
-
-            return {
-                'id': row[0],
-                'title': row[1],
-                'order': row[2],
-                'description': description,
-                'week': week
-            }
+                with open(lesson_file, 'r', encoding='utf-8') as f:
+                    lesson_json = json.load(f)
+                    return {
+                        'id': lesson_json.get('id'),
+                        'title': lesson_json.get('title'),
+                        'order': lesson_json.get('order'),
+                        'description': lesson_json.get('description', ''),
+                        'week': lesson_json.get('week', 0)
+                    }
+            except Exception as e:
+                print(f"Error loading lesson metadata {lesson_id}: {e}")
 
         return None
 
@@ -226,12 +159,11 @@ class Database:
 
     def get_progress(self):
         """Get overall user progress"""
+        lessons = self.get_all_lessons()
+        total = len(lessons)
+
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
-
-        # Total lessons
-        cursor.execute('SELECT COUNT(*) FROM lessons')
-        total = cursor.fetchone()[0]
 
         # Completed lessons
         cursor.execute('SELECT COUNT(DISTINCT lesson_id) FROM user_progress WHERE completed = TRUE')
@@ -239,18 +171,30 @@ class Database:
 
         # Current lesson (next incomplete)
         cursor.execute('''
-            SELECT id FROM lessons
-            WHERE id NOT IN (SELECT lesson_id FROM user_progress WHERE completed = TRUE)
-            ORDER BY order_num LIMIT 1
+            SELECT lesson_id FROM user_progress WHERE completed = TRUE ORDER BY completed_at DESC LIMIT 1
         ''')
-        current = cursor.fetchone()
+        current_result = cursor.fetchone()
+        current_lesson_id = None
+        if current_result:
+            # Get next lesson
+            current_id = current_result[0]
+            for lesson in lessons:
+                if lesson['id'] == current_id:
+                    idx = lessons.index(lesson)
+                    if idx + 1 < len(lessons):
+                        current_lesson_id = lessons[idx + 1]['id']
+                    break
+        else:
+            # No lessons completed, start with first
+            if lessons:
+                current_lesson_id = lessons[0]['id']
 
         conn.close()
 
         return {
             'total': total,
             'completed': completed,
-            'current_lesson_id': current[0] if current else None,
+            'current_lesson_id': current_lesson_id,
             'percentage': (completed / total * 100) if total > 0 else 0
         }
 
