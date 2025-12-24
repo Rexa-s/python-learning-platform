@@ -1,0 +1,8 @@
+nul
+con
+prn
+__pycache__/
+*.pyc
+build/
+dist/
+.env
